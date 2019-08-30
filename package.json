@@ -23,6 +23,7 @@
   "devDependencies": {
     "jest": "^24.9.0",
     "memory-fs": "^0.4.1",
+    "release-it": "^12.3.6",
     "webpack": "^4.39.3"
   },
   "dependencies": {
@@ -30,9 +31,15 @@
     "source-map": "^0.7.3"
   },
   "scripts": {
-    "test": "jest --env=node"
+    "test": "jest --env=node",
+    "release": "release-it"
   },
   "peerDependencies": {
     "webpack": ">=4"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    }
   }
 }
