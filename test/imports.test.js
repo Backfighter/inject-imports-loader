@@ -6,14 +6,14 @@ describe('generateImport', () => {
       .toBe('import \'pkg\';');
   });
 
-  it('should map a string to an named import', () => {
+  it('should map a string to a default import', () => {
     expect(generateImport('pkg', 'name'))
       .toBe('import name from \'pkg\';');
   });
 
-  it('should map a string with ~ to an aliased import', () => {
+  it('should not interpret ~ for a default import', () => {
     expect(generateImport('pkg', 'name~alias'))
-      .toBe('import name as alias from \'pkg\';');
+      .toBe('import name~alias from \'pkg\';');
   });
 
   it('should map a string array to multi import', () => {

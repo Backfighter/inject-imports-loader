@@ -9,14 +9,14 @@ module.exports = generateImport;
  */
 function generateImport(pkgName, property) {
   if (!/^['"].+['"]$/.test(pkgName)) {
-    // If package name is not quoted 
-    // already, quote it.
+    // If package name is not quoted already,
+    // quote it.
     pkgName = `'${pkgName}'`
   }
   if (property === true) {
     return `import ${pkgName};`;
   } else if (typeof property === 'string') {
-    return `import ${namedImport(property)} from ${pkgName};`;
+    return `import ${property} from ${pkgName};`;
   } else if (Array.isArray(property)) {
     return `import { ${property.map(namedImport).join(', ')} } from ${pkgName};`;
   }
