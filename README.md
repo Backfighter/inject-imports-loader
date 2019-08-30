@@ -22,21 +22,18 @@ npm i inject-imports-loader --save-dev
 ### Inline
 
 ```js
-import 'inject-imports-loader?angular-mocks,moment=moment~m,lodash[]=reduce,lodash[]=transform~tf!./file.js';
+import 'inject-imports-loader?angular-mocks,lodash[]=reduce,lodash[]=transform~tf!./file.js';
 ```
 Results in:  
 
 **file.js**
 ```js
 /*** IMPORTS FROM inject-imports-loader ***/
+import "angular-mocks";
+import angular from "angular";
+import { reduce, transform as tf } from "lodash";
 
-import 'angular-mocks';
-import angular from 'angular';
-import moment as m from 'moment';
-import { reduce, transform as tf } from 'lodash';
-
-
-// ... (rest of the file)
+// ... (content of file.js)
 ```
 
 ### Configuration
@@ -53,8 +50,7 @@ module.exports = {
         options: {
           'angular-mocks': true,
           'angular': 'angular',
-          'moment': 'moment~m',
-          'lodash': ['reduce', 'ransform~tf'],
+          'lodash': ['reduce', 'transform~tf'],
         }
       }
     ]
@@ -67,14 +63,11 @@ Results in:
 **file.js**
 ```js
 /*** IMPORTS FROM inject-imports-loader ***/
+import "angular-mocks";
+import angular from "angular";
+import { reduce, transform as tf } from "lodash";
 
-import 'angular-mocks';
-import angular from 'angular';
-import moment as m from 'moment';
-import { reduce, transform as tf } from 'lodash';
-
-
-// ... (rest of the file)
+// ... (content of file.js)
 ```
 
 ## Similar loaders

@@ -18,7 +18,7 @@
     "source-map": "^0.7.3"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --env=node"
   },
   "peerDependencies": {
     "webpack": ">=2"
