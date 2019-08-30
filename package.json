@@ -8,6 +8,18 @@
   "engines": {
     "node": ">=8"
   },
+  "bugs": "https://github.com/Backfighter/inject-imports-loader/issues",
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "webpack-loader",
+    "webpack",
+    "loader",
+    "import",
+    "inject"
+  ],
+  "repository": "github:Backfighter/inject-imports-loader",
   "devDependencies": {
     "jest": "^24.9.0",
     "memory-fs": "^0.4.1",
