@@ -1,6 +1,7 @@
 [![npm][npm]][npm-url]
 [![node][node]][node-url]
 [![deps][deps]][deps-url]
+[![travis][travis]][travis-url]
 
 <div align="center">
   <h1>Inject Imports Loader</h1>
@@ -81,6 +82,8 @@ you should use the [imports-loader][imports-loader] instead
 
 [imports-loader]: https://github.com/webpack-contrib/imports-loader
 
+[travis]: https://img.shields.io/travis/Backfighter/inject-imports-loader?style=flat-square
+[travis-url]: https://travis-ci.org/Backfighter/inject-imports-loader
 
 [npm]: https://img.shields.io/npm/v/inject-imports-loader.svg?style=flat-square
 [npm-url]: https://npmjs.com/package/inject-imports-loader

@@ -5,8 +5,6 @@ branches:
     - master
 env:
   - WEBPACK_VERSION="latest"
-  - WEBPACK_VERSION="^3.12.0" 
-  - WEBPACK_VERSION="^2.7.0"
 node_js:
   - 'node'
   - '10'

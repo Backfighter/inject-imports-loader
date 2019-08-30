@@ -33,6 +33,6 @@
     "test": "jest --env=node"
   },
   "peerDependencies": {
-    "webpack": ">=2"
+    "webpack": ">=4"
   }
 }
