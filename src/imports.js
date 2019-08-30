@@ -24,7 +24,7 @@ function generateImport(pkgName, property) {
  *  if `property` contains the character `~`.
  */
 function namedImport(property) {
-  const parts = property.split('~', 1);
+  const parts = property.split('~', 2);
   if (parts.length === 1) {
     return parts[0];
   } else {
