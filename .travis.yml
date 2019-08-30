@@ -1,0 +1,23 @@
+sudo: false
+language: node_js
+branches:
+  only:
+    - master
+env:
+  - WEBPACK_VERSION="latest"
+  - WEBPACK_VERSION="^3.12.0" 
+  - WEBPACK_VERSION="^2.7.0"
+node_js:
+  - 'node'
+  - '10'
+  - '8'
+matrix:
+  fast_finish: true
+before_install:
+  - nvm --version
+  - node --version
+before_script:
+  - yarn add webpack@$WEBPACK_VERSION
+
+script:
+  - yarn run test
