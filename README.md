@@ -47,11 +47,13 @@ module.exports = {
     rules: [
       {
         test: /file\.js$/,
-        use: 'inject-imports-loader',
-        options: {
-          'angular-mocks': true,
-          'angular': 'angular',
-          'lodash': ['reduce', 'transform~tf'],
+        use: {
+          loader: 'inject-imports-loader',
+          options: {
+            'angular-mocks': true,
+            'angular': 'angular',
+            'lodash': ['reduce', 'transform~tf'],
+          }
         }
       }
     ]
