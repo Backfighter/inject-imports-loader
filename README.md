@@ -93,5 +93,5 @@ you should use the [imports-loader][imports-loader] instead
 [node]: https://img.shields.io/node/v/inject-imports-loader.svg?style=flat-square
 [node-url]: https://nodejs.org
 
-[deps]: https://david-dm.org/Backfighter/inject-imports-loader.svg?style=flat-square
+[deps]: https://img.shields.io/david/Backfighter/inject-imports-loader?style=flat-square
 [deps-url]: https://david-dm.org/Backfighter/inject-imports-loader
