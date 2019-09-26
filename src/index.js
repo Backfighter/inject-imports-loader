@@ -29,7 +29,7 @@ function injectImports(content, map) {
   const prefix = HEADER + imports.join('\n') + '\n\n';
 
   if (map) {
-    SourceMapConsumer.with(map, (consumer) => {
+    SourceMapConsumer.with(map, null, (consumer) => {
       const node = SourceNode.fromStringWithSourceMap(content, consumer);
       node.prepend(prefix);
       const result = node.toStringWithSourceMap({
