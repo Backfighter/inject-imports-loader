@@ -32,7 +32,7 @@
   },
   "scripts": {
     "test": "jest --env=node",
-    "release": "release-it"
+    "release": "read token && GITHUB_TOKEN=\"$token\" release-it"
   },
   "peerDependencies": {
     "webpack": ">=4"
