@@ -23,7 +23,8 @@ jobs:
       node_js: "lts/*"
       deploy:
         provider: script
-        script: "yarn semantic-release"
+        skip_cleanup: true
+        script: yarn semantic-release
         on:
           all_branches: true
           condition: $TRAVIS_BRANCH =~ ^(master|next)$
