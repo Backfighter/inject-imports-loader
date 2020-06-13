@@ -25,3 +25,6 @@ jobs:
         provider: script
         skip_cleanup: true
         script: yarn semantic-release
+        on:
+          all_branches: true
+          condition: $TRAVIS_BRANCH =~ ^(master|next)$
