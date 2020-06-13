@@ -1,21 +1,30 @@
-sudo: false
 language: node_js
-branches:
-  only:
-    - master
+
 env:
   - WEBPACK_VERSION="latest"
+  - WEBPACK_VERSION="4.39.3"
 node_js:
-  - 'node'
-  - '10'
-  - '8'
-matrix:
-  fast_finish: true
+  - "lts/*"
+  - "10"
+  - "8"
+
 before_install:
   - nvm --version
   - node --version
+install: "yarn install --frozen-lockfile --ignore-engines"
 before_script:
-  - yarn add webpack@$WEBPACK_VERSION
-
+  - yarn add webpack@$WEBPACK_VERSION --ignore-engines
 script:
   - yarn run test
+
+jobs:
+  include:
+    - stage: release
+      node_js: "lts/*"
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script: yarn semantic-release
+        on:
+          all_branches: true
+          condition: $TRAVIS_BRANCH =~ ^(master|next)$
