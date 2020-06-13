@@ -3,6 +3,7 @@ language: node_js
 
 env:
   - WEBPACK_VERSION="latest"
+  - WEBPACK_VERSION="4.39.3"
 node_js:
   - "lts/*"
   - "10"
