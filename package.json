@@ -6,7 +6,7 @@
   "author": "Peter Werner",
   "license": "MIT",
   "engines": {
-    "node": ">=8"
+    "node": ">= 8.9.0"
   },
   "bugs": "https://github.com/Backfighter/inject-imports-loader/issues",
   "files": [
@@ -28,7 +28,7 @@
     "webpack": "^4.44.2"
   },
   "dependencies": {
-    "loader-utils": "^1.2.3",
+    "loader-utils": "^2.0.0",
     "source-map": "^0.7.3"
   },
   "scripts": {
@@ -40,7 +40,18 @@
   },
   "release": {
     "plugins": [
-      "@semantic-release/commit-analyzer",
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "angular",
+          "releaseRules": [
+            {
+              "type": "breaking",
+              "release": "major"
+            }
+          ]
+        }
+      ],
       "@semantic-release/github",
       "@semantic-release/npm",
       "@semantic-release/release-notes-generator",
