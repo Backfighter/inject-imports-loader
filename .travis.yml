@@ -18,6 +18,9 @@ script:
   - yarn run test
 
 jobs:
+  exclude:
+    - node_js: "8"
+      env: WEBPACK_VERSION="5.10.1"
   include:
     - stage: release
       node_js: "lts/*"
