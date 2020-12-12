@@ -2,7 +2,7 @@ language: node_js
 
 env:
   - WEBPACK_VERSION="4.44.2"
-  - WEBPACK_VERSION="5.10.2"
+  - WEBPACK_VERSION="5.10.1"
 node_js:
   - "lts/*"
   - "10"
