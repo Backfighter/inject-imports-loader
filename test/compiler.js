@@ -1,7 +1,6 @@
 const path = require('path'),
   webpack = require('webpack'),
-  { createFsFromVolume, Volume } = require('memfs'),
-  memoryfs = require('memory-fs');
+  { createFsFromVolume, Volume } = require('memfs');
 
 module.exports = compile;
 

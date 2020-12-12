@@ -36,7 +36,7 @@
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
-    "webpack": ">=4 <5"
+    "webpack": ">=4"
   },
   "release": {
     "plugins": [

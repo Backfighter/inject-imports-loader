@@ -1,4 +1,13 @@
-const compile = require('./compiler');
+const compile = require('./compiler'),
+  webpack = require('webpack');
+
+function get_source(stats) {
+  if (webpack.version.startsWith("4")) {
+    return stats.toJson().modules[1].modules[0].source;
+  } else {
+    return stats.toJson({ source: true }).modules[0].source;
+  }
+}
 
 describe('inject-imports-loader', () => {
   it('should be truthful to the README example', async () => {
@@ -7,7 +16,7 @@ describe('inject-imports-loader', () => {
       'angular': 'angular',
       'lodash': ['reduce', 'transform~tf'],
     });
-    const output = stats.toJson().modules[1].modules[0].source;
+    const output = get_source(stats);
 
     expect(output).toBe(
       '/*** IMPORTS FROM inject-imports-loader ***/\n' +
