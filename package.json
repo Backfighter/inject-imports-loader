@@ -1,6 +1,6 @@
 {
   "name": "inject-imports-loader",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Similar to imports-loader but uses actual import statements.",
   "main": "src/index.js",
   "author": "Peter Werner",
