@@ -1,6 +1,5 @@
 
-const utils = require('loader-utils'),
-  SourceNode = require('source-map').SourceNode,
+const SourceNode = require('source-map').SourceNode,
   SourceMapConsumer = require('source-map').SourceMapConsumer,
   generateImport = require('./imports');
 
@@ -13,15 +12,18 @@ const HEADER = '/*** IMPORTS FROM inject-imports-loader ***/\n';
  * the content of loaded files.
  * @param {string} content - Source code of the processed file.
  * @param {*} map - Source map of the processed file.
+ * @this {webpack.loader.LoaderContext}
  */
 function injectImports(content, map) {
   const done = this.async();
-  const options = utils.getOptions(this);
+  const options = this.getOptions();
   const imports = Object
     .keys(options)
     .map(
       (key) => generateImport(
-        utils.stringifyRequest(this, key),
+        JSON.stringify(
+          this.utils.contextify(this.context, key)
+        ),
         options[key]
       )
     );
@@ -33,7 +35,7 @@ function injectImports(content, map) {
       const node = SourceNode.fromStringWithSourceMap(content, consumer);
       node.prepend(prefix);
       const result = node.toStringWithSourceMap({
-        file: utils.getCurrentRequest(this)
+        file: this.currentRequest
       });
       done(null, result.code, result.map.toJSON());
     })
