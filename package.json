@@ -48,7 +48,13 @@
               "type": "breaking",
               "release": "major"
             }
-          ]
+          ],
+          "parserOpts": {
+            "noteKeywords": [
+              "BREAKING CHANGE",
+              "BREAKING CHANGES"
+            ]
+          }
         }
       ],
       "@semantic-release/github",
