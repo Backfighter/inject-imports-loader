@@ -40,7 +40,24 @@
   },
   "release": {
     "plugins": [
-      "@semantic-release/commit-analyzer",
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "angular",
+          "releaseRules": [
+            {
+              "type": "breaking",
+              "release": "major"
+            }
+          ],
+          "parserOpts": {
+            "noteKeywords": [
+              "BREAKING CHANGE",
+              "BREAKING CHANGES"
+            ]
+          }
+        }
+      ],
       "@semantic-release/github",
       "@semantic-release/npm",
       "@semantic-release/release-notes-generator",
