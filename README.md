@@ -1,7 +1,6 @@
 [![npm][npm]][npm-url]
 [![node][node]][node-url]
-[![deps][deps]][deps-url]
-[![travis][travis]][travis-url]
+[![Build & Test](https://github.com/Backfighter/inject-imports-loader/actions/workflows/github-actions-build.yml/badge.svg)](https://github.com/Backfighter/inject-imports-loader/actions/workflows/github-actions-build.yml)
 
 <div align="center">
   <h1>Inject Imports Loader</h1>
