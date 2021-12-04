@@ -21,4 +21,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_REF: ${{ github.event.workflow_run.head_branch }}
         run: yarn semantic-release --branches ${{ github.event.workflow_run.head_branch }}
