@@ -21,10 +21,10 @@
   ],
   "repository": "github:Backfighter/inject-imports-loader",
   "devDependencies": {
-    "@semantic-release/git": "^9.0.0",
-    "jest": "^25",
+    "@semantic-release/git": "^10.0.1",
+    "jest": "^27.4.3",
     "memfs": "^3.2.0",
-    "semantic-release": "^17.0.8",
+    "semantic-release": "^18.0.1",
     "webpack": "4.44.2"
   },
   "dependencies": {
